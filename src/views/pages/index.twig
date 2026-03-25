@@ -1,14 +1,16 @@
 {% extends "layouts.master" %}
 
 {% block content %}
-    {# 1. قسم الترحيب (Hero Section) #}
-    <section class="hero-royal" style="background: linear-gradient(135deg, #002366 0%, #001a4d 100%); padding: 100px 20px; text-align: center; border-bottom: 4px solid #C5A021; position: relative; overflow: hidden;">
-        <div class="container" style="position: relative; z-index: 2;">
-            <h1 style="color: #C5A021; font-size: 3.5rem; font-weight: 900; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">أبو حاتم للعطارة</h1>
-            <p style="color: #FDFBF7; font-size: 1.4rem; max-width: 800px; margin: 0 auto 35px; line-height: 1.8;">نقاء الطبيعة وأصالة التراث في منتجاتنا من الحناء والسدر والأعشاب العضوية</p>
-            <a href="/products" class="s-button-primary" style="background: #C5A021; color: #002366; padding: 18px 50px; border-radius: 50px; font-weight: bold; font-size: 1.2rem; text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.2); transition: 0.3s;">تسوّق الآن</a>
+   {# 1. قسم البنر المتحرك الملكي #}
+<section class="main-slider" style="position: relative; overflow: hidden; background: #002366;">
+    <div style="display: flex; min-height: 450px; align-items: center; justify-content: center; background: linear-gradient(rgba(0,35,102,0.6), rgba(0,35,102,0.6)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; border-bottom: 5px solid #C5A021;">
+        <div style="text-align: center; color: white; padding: 20px;">
+            <h1 style="font-size: 4rem; color: #C5A021; margin-bottom: 10px;">أصالة الطبيعة</h1>
+            <p style="font-size: 1.5rem; margin-bottom: 30px;">حناء وسدر عضوي من أجود المزارع مباشرة إليك</p>
+            <a href="/products" style="background: #C5A021; color: #002366; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold;">تصفح المنتجات</a>
         </div>
-    </section>
+    </div>
+</section>
 
     {# 2. قسم المميزات السريع #}
     <div style="background: #fff; padding: 40px 0; border-bottom: 1px solid #eee;">
