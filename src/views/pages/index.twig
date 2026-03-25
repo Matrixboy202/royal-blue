@@ -1,10 +1,22 @@
 {% extends "layouts.master" %}
 
 {% block content %}
-<div style="padding: 100px 20px; text-align: center;">
-    <h1 style="color: #002366; font-size: 3rem;">مرحباً بك في متجر أبو حاتم</h1>
-    <p style="color: #C5A021; font-size: 1.5rem;">عناية ملكية بالحناء والسدر الطبيعي</p>
-    <br>
-    <button class="s-button-primary">استعرض منتجاتنا</button>
-</div>
+    {# 1. قسم الواجهة الفخم (Hero Section) #}
+    <div style="background-color: #002366; padding: 100px 20px; text-align: center; border-bottom: 5px solid #C5A021;">
+        <h1 style="color: #C5A021; font-size: 45px; font-weight: bold; margin-bottom: 10px;">أبو حاتم للعطارة</h1>
+        <p style="color: #FDFBF7; font-size: 20px; margin-bottom: 30px;">نقاء الطبيعة.. بين يديك (حناء - سدر - زيوت عضويّة)</p>
+        <a href="/products" style="background-color: #C5A021; color: #002366; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 18px;">اكتشف مجموعتنا الملكية</a>
+    </div>
+
+    {# 2. قسم عرض المنتجات (Product Grid) #}
+    <div style="background-color: #FDFBF7; padding: 50px 20px;">
+        <h2 style="text-align: center; color: #002366; margin-bottom: 40px;">منتجاتنا الأكثر مبيعاً</h2>
+        
+        {# هنا ستقوم منصة سلة تلقائياً بسحب منتجاتك #}
+        <div class="container">
+            {% for product in products %}
+                {# كود عرض المنتج بشكل أنيق #}
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
