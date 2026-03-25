@@ -93,3 +93,25 @@
 
 @import 'lite-youtube-embed/src/lite-yt-embed.css';
 @import 'mmenu-light/dist/mmenu-light.css';
+/* --- بداية تصميم متجر أبو حاتم الملكي --- */
+/* تأثير التكبير الفخم لمنتجات أبو حاتم */
+.product-card-royal {
+    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
+    &:hover {
+        transform: translateY(-10px); /* يرتفع المنتج للأعلى قليلاً */
+        box-shadow: 0 15px 35px rgba(0, 35, 102, 0.15) !important;
+        
+        img {
+            transform: scale(1.1); /* تكبير الصورة داخل المربع */
+        }
+    }
+    
+    img {
+        transition: transform 0.5s ease !important;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap');
+
+body, h1, h2, h3, h4, p, span {
+    font-family: 'Tajawal', sans-serif !important;
+}
