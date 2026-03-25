@@ -6,16 +6,6 @@
 | cart.items_count | int     |                                 |
 | cart.total       | string  | Formatted total ex: "١٠٠ ر.س"   |
 #}
-{% set important_links = theme.settings.get('important_links') %}
-<header class="store-header">
-  {# Top Nav #}
-  <div class="top-navbar">
-    <div class="container flex justify-between">
-      <div class="flex-1 flex items-center gap-2">
-          {# Footer Menu #}
-          {% if important_links %}
-            <salla-menu source="footer" topnav></salla-menu>
-          {% endif %}
 
 <nav style="background: #fff; border-bottom: 2px solid #C5A021; padding: 15px 0; direction: rtl;">
     <ul style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
