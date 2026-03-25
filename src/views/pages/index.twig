@@ -34,19 +34,44 @@ h2 {
         </div>
     </div>
 
-    {# 3. قسم المنتجات #}
-    <section style="background-color: #FDFBF7; padding: 60px 0;">
-        <div class="container">
-            <h2 style="color: #002366; text-align: center; margin-bottom: 40px; border-bottom: 3px solid #C5A021; display: inline-block; padding-bottom: 10px;">منتجاتنا الفاخرة</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
-                {% for product in products %}
-                    {# كود عرض المنتج هنا #}
-                {% else %}
-                    <p style="text-align: center; grid-column: 1 / -1; color: #666; padding: 40px;">أضف منتجك الأول من لوحة التحكم ليظهر هنا بفخامة.</p>
-                {% endfor %}
-            </div>
+   {# 3. قسم عرض المنتجات الملكي المطور #}
+<section style="background-color: #FDFBF7; padding: 80px 0;">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="color: #002366; font-size: 2.5rem; font-weight: 900; position: relative; display: inline-block;">
+                منتجاتنا الفاخرة
+                <div style="width: 50%; height: 4px; background: #C5A021; margin: 10px auto 0;"></div>
+            </h2>
         </div>
-    </section>
+
+        {# شبكة المنتجات بتصميم البطاقات #}
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
+            {% for product in products %}
+                <div class="product-card" style="background: #fff; border-radius: 20px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #f0f0f0; text-align: center;">
+                    {# صورة المنتج #}
+                    <div style="background: #f9f9f9; border-radius: 15px; margin-bottom: 20px; overflow: hidden; height: 250px;">
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    
+                    {# تفاصيل المنتج #}
+                    <h3 style="color: #002366; font-size: 1.3rem; margin-bottom: 10px; min-height: 50px;">{{ product.name }}</h3>
+                    <div style="color: #C5A021; font-weight: bold; font-size: 1.5rem; margin-bottom: 20px;">
+                        {{ product.price | money }}
+                    </div>
+                    
+                    {# زر الإضافة للسلة #}
+                    <button style="background: #002366; color: #fff; border: none; width: 100%; padding: 12px; border-radius: 10px; cursor: pointer; font-weight: bold; transition: 0.3s;">
+                        أضف للسلة 🛒
+                    </button>
+                </div>
+            {% else %}
+                <div style="grid-column: 1 / -1; text-align: center; padding: 50px; background: #fff; border-radius: 20px; border: 2px dashed #C5A021;">
+                    <p style="color: #002366; font-size: 1.2rem;">أضف منتجاتك من لوحة التحكم لتراها هنا بتنسيقها الجديد.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 
     {# 4. قسم التقييمات #}
     <section style="background-color: #fff; padding: 60px 0;">
