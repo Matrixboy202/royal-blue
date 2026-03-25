@@ -49,7 +49,30 @@
  * MMenu................Specific styles for mmenu addon.
  *
 */
+/* لمسات الهيدر الملكية */
+.main-header {
+    background-color: #ffffff !important;
+    border-bottom: 2px solid #C5A021 !important; // خط ذهبي نحيف تحت الهيدر
+}
 
+// أيقونات البحث والسلة والحساب
+.header-action-btn i, .header-action-btn svg {
+    color: #002366 !important; // لون أزرق ملكي للأيقونات
+}
+
+// خلفية شريط البحث
+.search-bar {
+    background: #FDFBF7 !important;
+    border-radius: 50px !important;
+    border: 1px solid #C5A021 !important;
+}
+
+// كلمة "تواصل معنا" والرقم فوق
+.top-header {
+    background-color: #002366 !important;
+    color: #C5A021 !important;
+    * { color: #C5A021 !important; }
+}
 @import './01-settings/tailwind';
 @import './01-settings/fonts';
 @import './01-settings/global';
