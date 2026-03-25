@@ -43,18 +43,17 @@ h2 {
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
             
             {# هذا هو الكود السحري الذي يجلب المنتجات من سلة #}
-            {% for product in products %}
-                <div class="product-card">
-                    <a href="{{ product.url }}" style="text-decoration: none;">
-                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                        <h3>{{ product.name }}</h3>
-                        <div class="product-price">{{ product.price | money }}</div>
-                    </a>
-                    <button class="add-to-cart-btn" onclick="salla.cart.add({{ product.id }})">إضافة للسلة</button>
-                </div>
-            {% else %}
-                <p style="text-align: center; grid-column: 1 / -1; color: #666;">جاري تجهيز المنتجات الفاخرة لك...</p>
-            {% endfor %}
+            {# جرب استبدال السطر القديم بهذا السطر #}
+{% for product in latest_products %} 
+    <div class="product-card">
+        <a href="{{ product.url }}">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <div class="product-price">{{ product.price | money }}</div>
+        </a>
+        <button class="add-to-cart-btn" onclick="salla.cart.add({{ product.id }})">إضافة للسلة</button>
+    </div>
+{% endfor %}
 
         </div>
     </div>
