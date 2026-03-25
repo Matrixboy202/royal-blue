@@ -110,3 +110,20 @@
         transition: transform 0.5s ease !important;
     }
 }
+/* --- تفعيل الخط الملكي لمتجر أبو حاتم --- */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+
+// تطبيق الخط على كل شيء في المتجر
+body, h1, h2, h3, h4, h5, h6, p, span, a, button, input {
+    font-family: 'Tajawal', sans-serif !important;
+}
+
+// لمسة إضافية للعناوين الكبيرة لتكون عريضة وفخمة
+h1 {
+    font-weight: 900 !important;
+    letter-spacing: -1px;
+}
+
+h2, .s-button-primary {
+    font-weight: 700 !important;
+}
