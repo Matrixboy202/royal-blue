@@ -1,126 +1,58 @@
 {% extends "layouts.master" %}
 
 {% block content %}
-   {# 1. قسم البنر المتحرك الملكي #}
-<section class="main-slider" style="position: relative; overflow: hidden; background: #002366;">
-    <div style="display: flex; min-height: 450px; align-items: center; justify-content: center; background: linear-gradient(rgba(0,35,102,0.6), rgba(0,35,102,0.6)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; border-bottom: 5px solid #C5A021;">
-        <div style="text-align: center; color: white; padding: 20px;">
-            <h1 style="font-size: 4rem; color: #C5A021; margin-bottom: 10px;">أصالة الطبيعة</h1>
-            <p style="font-size: 1.5rem; margin-bottom: 30px;">حناء وسدر عضوي من أجود المزارع مباشرة إليك</p>
-            <a href="/products" style="background: #C5A021; color: #002366; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold;">تصفح المنتجات</a>
-        </div>
-    </div>
-</section>
+    {# تنسيقات الحقن المباشر - القوة القصوى #}
+    <style>
+        header.main-header { background: #ffffff !important; border-bottom: 3px solid #C5A021 !important; }
+        .header-action-btn i, .header-action-btn svg { color: #002366 !important; }
+        .top-header { background-color: #002366 !important; }
+        .top-header * { color: #C5A021 !important; }
+        .search-bar { border: 2px solid #C5A021 !important; border-radius: 25px !important; }
+        * { font-family: 'Tajawal', sans-serif !important; }
+    </style>
 
-    {# 2. قسم المميزات السريع #}
+    {# 1. البنر الملكي #}
+    <section style="position: relative; min-height: 450px; display: flex; align-items: center; justify-content: center; background: linear-gradient(rgba(0,35,102,0.6), rgba(0,35,102,0.6)), url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; border-bottom: 5px solid #C5A021;">
+        <div style="text-align: center; color: white; padding: 20px;">
+            <h1 style="font-size: 3.5rem; color: #C5A021; font-weight: 900; margin-bottom: 10px;">أبو حاتم للعطارة</h1>
+            <p style="font-size: 1.4rem; margin-bottom: 30px;">نقاء الطبيعة وأصالة التراث في متناول يدك</p>
+            <a href="/products" style="background: #C5A021; color: #002366; padding: 15px 45px; border-radius: 50px; text-decoration: none; font-weight: bold; display: inline-block;">تسوّق الآن</a>
+        </div>
+    </section>
+
+    {# 2. قسم المميزات #}
     <div style="background: #fff; padding: 40px 0; border-bottom: 1px solid #eee;">
         <div class="container" style="display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 20px;">
-            <div style="flex: 1; min-width: 200px;">
-                <span style="font-size: 30px; display: block; margin-bottom: 10px;">🌿</span>
-                <h4 style="color: #002366; font-weight: bold;">أعشاب عضوية 100%</h4>
-            </div>
-            <div style="flex: 1; min-width: 200px;">
-                <span style="font-size: 30px; display: block; margin-bottom: 10px;">🏆</span>
-                <h4 style="color: #002366; font-weight: bold;">جودة ملكية مختارة</h4>
-            </div>
-            <div style="flex: 1; min-width: 200px;">
-                <span style="font-size: 30px; display: block; margin-bottom: 10px;">🚚</span>
-                <h4 style="color: #002366; font-weight: bold;">توصيل لكافة المناطق</h4>
-            </div>
+            <div style="flex: 1; min-width: 200px;"><span>🌿</span><h4 style="color: #002366;">أعشاب عضوية 100%</h4></div>
+            <div style="flex: 1; min-width: 200px;"><span>🏆</span><h4 style="color: #002366;">جودة ملكية مختارة</h4></div>
+            <div style="flex: 1; min-width: 200px;"><span>🚚</span><h4 style="color: #002366;">توصيل لكافة المناطق</h4></div>
         </div>
     </div>
 
-    {# 3. قسم عرض المنتجات (هنا السحر!) #}
-    <section style="background-color: #FDFBF7; padding: 80px 0;">
+    {# 3. قسم المنتجات #}
+    <section style="background-color: #FDFBF7; padding: 60px 0;">
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 50px; border-right: 5px solid #C5A021; padding-right: 20px;">
-                <h2 style="color: #002366; font-size: 2.2rem; font-weight: bold; margin: 0;">منتجاتنا الفاخرة</h2>
-                <a href="/products" style="color: #C5A021; text-decoration: none; font-weight: bold;">مشاهدة الكل ←</a>
-            </div>
-
-            {# شبكة المنتجات #}
+            <h2 style="color: #002366; text-align: center; margin-bottom: 40px; border-bottom: 3px solid #C5A021; display: inline-block; padding-bottom: 10px;">منتجاتنا الفاخرة</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
                 {% for product in products %}
-                    <div class="product-card-royal" style="background: #fff; border-radius: 20px; padding: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; border: 1px solid transparent;">
-                        <div style="background: #f9f9f9; border-radius: 15px; margin-bottom: 15px; overflow: hidden; height: 250px;">
-                            <img src="{{ product.image.url }}" alt="{{ product.name }}" style="width: 100%; height: 100%; object-fit: cover;">
-                        </div>
-                        <h3 style="color: #002366; font-size: 1.2rem; margin-bottom: 10px; font-weight: bold;">{{ product.name }}</h3>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
-                            <span style="color: #C5A021; font-weight: bold; font-size: 1.3rem;">{{ product.price | money }}</span>
-                            <button class="s-button-primary" style="background: #002366; color: #fff; border: none; padding: 10px 20px; border-radius: 10px; cursor: pointer;">أضف للسلة</button>
-                        </div>
-                    </div>
+                    {# كود عرض المنتج هنا #}
                 {% else %}
-                    {# في حال لا توجد منتجات حالياً #}
-                    <p style="text-align: center; grid-column: 1 / -1; color: #666;">سيتم عرض المنتجات هنا بمجرد إضافتها للمتجر.</p>
+                    <p style="text-align: center; grid-column: 1 / -1; color: #666; padding: 40px;">أضف منتجك الأول من لوحة التحكم ليظهر هنا بفخامة.</p>
                 {% endfor %}
             </div>
         </div>
     </section>
-{# 4. قسم آراء العملاء الملكي #}
-<section style="background-color: #fff; padding: 80px 0; border-top: 1px solid #eee;">
-    <div class="container">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h2 style="color: #002366; font-size: 2.2rem; font-weight: bold;">قالوا عن "أبو حاتم للعطارة"</h2>
-            <div style="color: #C5A021; font-size: 1.2rem; margin-top: 10px;">⭐⭐⭐⭐⭐</div>
+
+    {# 4. قسم التقييمات #}
+    <section style="background-color: #fff; padding: 60px 0;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: #002366; margin-bottom: 30px;">قالوا عن "أبو حاتم"</h2>
+            <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px;">
+                <div style="background: #FDFBF7; padding: 20px; border-radius: 15px; border-right: 4px solid #C5A021; max-width: 300px;">
+                    <p>"جودة الحناء تفوق الوصف، شكراً لكم."</p>
+                    <strong style="color: #002366;">سارة العتيبي</strong>
+                </div>
+            </div>
         </div>
-
-        <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 25px;">
-            
-            {# التقييم الأول #}
-            <div style="flex: 1; min-width: 300px; max-width: 350px; background: #FDFBF7; padding: 30px; border-radius: 20px; border-right: 4px solid #C5A021; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
-                <p style="color: #444; font-style: italic; margin-bottom: 20px; line-height: 1.6;">"ما شاء الله، الحناء جداً نظيفة واللون طلع خيالي من أول مرة. التوصيل كان سريع والتعامل راقي جداً."</p>
-                <div style="font-weight: bold; color: #002366;">سارة العتيبي</div>
-                <div style="font-size: 12px; color: #888;">عميل موثق ✅</div>
-            </div>
-
-            {# التقييم الثاني #}
-            <div style="flex: 1; min-width: 300px; max-width: 350px; background: #FDFBF7; padding: 30px; border-radius: 20px; border-right: 4px solid #C5A021; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
-                <p style="color: #444; font-style: italic; margin-bottom: 20px; line-height: 1.6;">"جربت السدر المطحون، فعلاً أصلي وبدون شوائب. اهتمامكم بالتغليف والجودة واضح جداً. الله يبارك لكم."</p>
-                <div style="font-weight: bold; color: #002366;">محمد خالد</div>
-                <div style="font-size: 12px; color: #888;">عميل موثق ✅</div>
-            </div>
-
-            {# التقييم الثالث #}
-            <div style="flex: 1; min-width: 300px; max-width: 350px; background: #FDFBF7; padding: 30px; border-radius: 20px; border-right: 4px solid #C5A021; box-shadow: 0 5px 15px rgba(0,0,0,0.02);">
-                <p style="color: #444; font-style: italic; margin-bottom: 20px; line-height: 1.6;">"أفضل زيوت جربتها لشعري، النتيجة مبهرة. شكراً أبو حاتم على هذه الأمانة في المنتجات."</p>
-                <div style="font-weight: bold; color: #002366;">أم نورة</div>
-                <div style="font-size: 12px; color: #888;">عميل موثق ✅</div>
-            </div>
-
-        </div>
-    </div>
-</section>
+    </section>
 {% endblock %}
-<style>
-  /* تلوين الهيدر العلوي */
-  header.main-header { 
-    background-color: #ffffff !important; 
-    border-bottom: 3px solid #C5A021 !important; 
-  }
-
-  /* تلوين أيقونات البحث والسلة والحساب */
-  .header-action-btn, .header-action-btn i, .header-action-btn svg {
-    color: #002366 !important; /* أزرق ملكي */
-  }
-
-  /* تلوين النص فوق الهيدر */
-  .top-header {
-    background-color: #002366 !important;
-  }
-  .top-header * {
-    color: #C5A021 !important; /* ذهبي */
-  }
-
-  /* تعديل شكل زر البحث */
-  .search-bar {
-    border: 2px solid #C5A021 !important;
-    border-radius: 25px !important;
-  }
-
-  /* التأكد من أن الخط هو "تجوال" */
-  * {
-    font-family: 'Tajawal', sans-serif !important;
-  }
-</style>
