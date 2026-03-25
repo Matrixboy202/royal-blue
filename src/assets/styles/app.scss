@@ -122,3 +122,32 @@ h1 {
     font-weight: 900 !important;
     font-size: 3rem !important;
 }
+/* تجميل هيدر متجر أبو حاتم */
+.main-header {
+    background: #ffffff !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+// أيقونة السلة والبحث
+.header-action-btn {
+    color: #002366 !important; // أزرق ملكي
+    &:hover {
+        color: #C5A021 !important; // يقلب ذهبي عند التمرير
+    }
+}
+
+// شارة عدد المنتجات في السلة
+.cart-count {
+    background-color: #C5A021 !important;
+    color: #002366 !important;
+    font-weight: bold;
+}
+
+// شريط البحث
+.search-input {
+    border-radius: 50px !important;
+    border: 1px solid #eee !important;
+    &:focus {
+        border-color: #C5A021 !important;
+    }
+}
