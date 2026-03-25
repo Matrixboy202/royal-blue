@@ -35,29 +35,7 @@ h2 {
     </div>
 
    {# 3. قسم عرض المنتجات الملكي المطور #}
-<section style="padding: 40px 0; background: #fff;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
-        
-        <h2 style="text-align: center; color: #002366; font-weight: bold; margin-bottom: 30px; border-bottom: 3px solid #C5A021; display: inline-block; padding-bottom: 10px;">منتجاتنا الفاخرة</h2>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px;">
-            
-            {# هذا هو الكود السحري الذي يجلب المنتجات من سلة #}
-            {# جرب استبدال السطر القديم بهذا السطر #}
-{% for product in latest_products %} 
-    <div class="product-card">
-        <a href="{{ product.url }}">
-            <img src="{{ product.image.url }}" alt="{{ product.name }}">
-            <h3>{{ product.name }}</h3>
-            <div class="product-price">{{ product.price | money }}</div>
-        </a>
-        <button class="add-to-cart-btn" onclick="salla.cart.add({{ product.id }})">إضافة للسلة</button>
-    </div>
-{% endfor %}
-
-        </div>
-    </div>
-</section>
 
         {# شبكة المنتجات بتصميم البطاقات #}
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
