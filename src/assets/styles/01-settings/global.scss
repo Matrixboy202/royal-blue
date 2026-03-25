@@ -1,29 +1,22 @@
+// ألوان متجر أبو حاتم الملكية
+$main-blue: #002366;    // الأزرق الملكي
+$gold-shine: #C5A021;   // الذهبي الفخم
+$soft-cream: #FDFBF7;   // كريمي للأعشاب والحناء
 
-// Colors
-$main-color: var(--color-primary);
-$infinte-color: var(--infinte-color);
-$main-text-color: var(--main-text-color);
-
+// تطبيق الألوان على المتجر
 :root {
-  --infinte-color: #c9c9c9;
-  --main-text-color: #231f1e;
-  --main-text-color-dark: #2b2d34;
+  --s-color-primary: #{$main-blue};
+  --s-color-primary-darker: #001a4d;
+  --main-bg: #{$soft-cream};
+}
 
-  /* current */
-  --color-primary: #5cd5c4;
-  --color-primary: #414042;
-  --color-primary-d: #272628;
-  --color-primary-l: #676668;
-  --color-primary-reverse: #ff6767;
-  --color-text: #7c8082;
-  --bg-gray: #c6c7ce1a;
-  --color-grey: #f5f7f9;
-  --color-light-grey: #eeeeee;
-  /* font-size */
-  --font-sm: 0.8685714286rem;
-  /* font-family: ; */
-  --font-main: "DINNextLTArabic";
+body {
+  background-color: var(--main-bg) !important;
+  font-family: 'Tajawal', sans-serif;
+}
 
-  /* plugins */
-  --mm-ocd-width: calc(100% - 51px);
+// لمسة ذهبية للهيدر
+.main-header {
+  background-color: var(--s-color-primary) !important;
+  border-bottom: 3px solid #{$gold-shine};
 }
